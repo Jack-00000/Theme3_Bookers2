@@ -1,0 +1,32 @@
+<%= flash[:notice] %>
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 pt-3">
+      <h1>welcome to <i class="fas fa-book"></i><b>Bookers</b> !!</h1>
+      <p>In <i class="fas fa-book"></i><b>Bookers</b>,</p>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <p>about various books!</p>
+    </div>
+    
+    <div class="btn-wrapper col-10 mx-auto">
+      <% if user_signed_in? %>
+      <div class="row">
+        <%= link_to "Log in", user_path(current_user), class: "btn btn-sm btn-info mx-auto col-6" %>
+      </div>
+      <br>
+      <div class="row">
+        <%= link_to "Sign up", user_path(current_user), class: "btn btn-sm btn-success mx-auto col-6 mt-n2" %>
+      </div>
+      <% else %>
+      <div class="row">
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-sm btn-info mx-auto col-6" %>
+      </div>
+      <br>
+      <div class="row">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sm btn-success mx-auto col-6 mt-n2" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<h2 class="mt-3">New book</h2>
+<%= form_with model: book do |f| %>
+<div class="form-group">
+  <lable for=book_title>本のタイトル</lable>
+  <%= f.text_field :title, id:"book_title", class: "form-control mt-2" %>
+</div>
+<div class="form-group">
+  <lable for=book_opinion>感想</lable>
+  <%= f.text_area :body, id:"book_opinion", class: "form-control mt-2" %>
+</div>
+  <%= f.submit 'Create Book', class: "btn btn-success" %>
+<% end %>

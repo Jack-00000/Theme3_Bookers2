@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto mt-3">
+      <h1>Editing Book</h1>
+      <%= render 'book_error', book: @book %>
+      <%= form_with model: @book do |f| %>
+      <div class="form-group">
+        <label for="book_title">本のタイトル</label><br>
+        <%= f.text_field :title, id:"book_title", class: "form-control mb-n4" %><br>
+      </div>
+      <div class="form-group">
+        <label for="book_opinion">感想</label><br>
+        <%= f.text_area :body, id:"book_opinion", class: "form-control mb-n2" %><br>
+        <%= f.submit "Update Book", class: "btn btn-success btn-block col-3" %>
+      </div>
+      <% end %>
+      <%= link_to "Show", book_path %>
+      |
+      <%= link_to "Back", books_path %>
+    </div>
+  </div>
+</div>
